@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  web:
+    image: node:14
+    working_dir: /app
+    volumes:
+      - ./ecommerce:/app
+    command: "npm start"
+  ai_service:
+    build: ./ai_service
+    command: "python3 ai_error_diagnosis.py"
